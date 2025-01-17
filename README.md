@@ -13,11 +13,11 @@
 
 ## Soluciones planteadas
 
-1. [Crazy form](./ArenaRPA/main.py) Completado
+1. [Crazy form](./ArenaRPA/main.py) Completado.
 
 2. 
-    * [Strange Counter](/HackRank/strange_counter.py)
-    * [Sherlock and The Beast](/HackRank/sherlock.py)
+    * [Strange Counter](/HackRank/strange_counter.py) Completado.
+    * [Sherlock and The Beast](/HackRank/sherlock.py) Completado.
     * [Fibonacci Modified](/HackRank/fibonacci_mod.py)
     * [Even Tree](/HackRank/even_tree.py)
 

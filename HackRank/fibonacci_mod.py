@@ -5,7 +5,18 @@ calcular el termino n
 https://www.hackerrank.com/challenges/fibonacci-modified/problem
 """
 
-def fibonacciModified(t1, t2, n):
+def fibonacciModified(t1: int, t2: int, n: int) -> int:
+    """Calcula la funcion de fibonacci modificada
+
+    Args:
+        t1 (int): primer termino
+        t2 (int): segundo termino
+        n (int): termino a calcular
+    
+    return:
+        el numero n de la serie
+    
+    """
     if n == 1:
         return t1
     elif n == 2:
@@ -14,15 +25,6 @@ def fibonacciModified(t1, t2, n):
     for _ in range(3, n + 1):
         t1, t2 = t2, t1 + t2**2
     return t2
-    
-
-def fibonacciModified1(t1, t2, n):
-    prev, prev2 = t2, t1
-    
-    for step in range(2,n):
-        prev, prev2 = prev**2 + prev2, prev
-
-    return prev
 
 
 if __name__ == '__main__':
@@ -35,5 +37,5 @@ if __name__ == '__main__':
 
     n = int(first_multiple_input[2])
 
-    result = fibonacciModified1(t1, t2, n)
+    result = fibonacciModified(t1, t2, n)
     print(result, sep='\n')
