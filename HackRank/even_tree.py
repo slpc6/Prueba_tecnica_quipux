@@ -1,29 +1,11 @@
 """
 https://www.hackerrank.com/challenges/even-tree/problem
 """
+#External lebraries
+from collections import defaultdict
 
 
-def dfs(graph: dict, node: int, parent: int) -> int:
-    """def: deep-first search
-
-    args:
-        graph: diccionario de nodos y aristas
-        node: nodo actual
-        parent: nodo padre
-    
-    return:
-        int: cantidad de nodos pares
-"""
-    children = 0
-    for child in graph[node]:
-        if child != parent:
-            children += dfs(graph, child, node)
-    if children % 2 == 0:
-        return 1
-    return children + 1
-
-
-def evenForest(t_nodes: int, t_edges: int, t_form: list[int], t_to: list[int]) -> int:
+def evenForest(t_nodes: int, t_edges: int, t_from: list[int], t_to: list[int]) -> int:
     """Calcula la cantidad de arboles posibles con nodos pares
 
     args:
@@ -36,16 +18,27 @@ def evenForest(t_nodes: int, t_edges: int, t_form: list[int], t_to: list[int]) -
         cantidad de arboles pares
 
 """
-    graph = {}
-    for i in range(t_edges):
-        if t_form[i] not in graph:
-            graph[t_form[i]] = []
-        if t_to[i] not in graph:
-            graph[t_to[i]] = []
-        graph[t_form[i]].append(t_to[i])
-        graph[t_to[i]].append(t_form[i])
+    arbol = defaultdict(list)
+    for i, j in zip(t_from, t_to):
+        arbol[i].append(j)
+        arbol[j].append(i)
 
-    return dfs(graph, 1, 0) - 1
+    sub_arbol = [0] * (t_nodes + 1)
+    
+    def dfs(node, parent):
+        sub_arbol[node] = 1
+        for neighbor in arbol[node]:
+            if neighbor != parent:
+                dfs(neighbor, node)
+                sub_arbol[node] += sub_arbol[neighbor]
+    dfs(1, -1)
+
+    res = 0
+    for i in range(2, t_nodes + 1):
+        if sub_arbol[i] % 2 == 0:
+            res += 1
+    
+    return res
 
 
 if __name__ == '__main__':
