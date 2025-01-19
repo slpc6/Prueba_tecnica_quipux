@@ -1,9 +1,7 @@
 """
-Dado el termino t1, t2 y n
-el termino iesimo sera ti+2 = ti+(ti+1)^2
-calcular el termino n
 https://www.hackerrank.com/challenges/fibonacci-modified/problem
 """
+
 
 def fibonacciModified(t1: int, t2: int, n: int) -> int:
     """Calcula la funcion de fibonacci modificada
@@ -39,3 +37,4 @@ if __name__ == '__main__':
 
     result = fibonacciModified(t1, t2, n)
     print(result, sep='\n')
+    

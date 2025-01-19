@@ -1,20 +1,7 @@
 """
-t_nodes: el numero de nodos en el arbol
-t_edges: el numero de aristas indirectas en el arbol
-t_from: inicio del arbol por nodo
-t_to: nodo final por arista, (Match by index to t_from.)
 https://www.hackerrank.com/challenges/even-tree/problem
-10 9
-2 1
-3 1
-4 3
-5 2
-6 1
-7 2
-8 6
-9 8
-10 8
 """
+
 
 def dfs(graph: dict, node: int, parent: int) -> int:
     """def: deep-first search

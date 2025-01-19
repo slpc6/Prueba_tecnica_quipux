@@ -19,7 +19,7 @@
     * [Strange Counter](/HackRank/strange_counter.py) Completado.
     * [Sherlock and The Beast](/HackRank/sherlock.py) Completado.
     * [Fibonacci Modified](/HackRank/fibonacci_mod.py) Completado.
-    * [Even Tree](/HackRank/even_tree.py)
+    * [Even Tree](/HackRank/even_tree.py) Completado.
 
 
 ## Datos
